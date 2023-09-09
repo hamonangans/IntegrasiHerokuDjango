@@ -86,7 +86,7 @@ DATABASES = {
 }
 import dj_database_url
 DATABASES = {
-    'default': dj_database_url.config(defaul=os.environ.get('DATABSE_URL'))
+    'default': dj_database_url.config(defaul=os.environ.get('DATABASE_URL'))
 }
 
 
