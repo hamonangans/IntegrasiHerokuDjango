@@ -1,1 +1,1 @@
-web: gunicorn integrasi-heroku-django.wsgi
+web gunicorn Proyek1.wsgi:application --log-file -
