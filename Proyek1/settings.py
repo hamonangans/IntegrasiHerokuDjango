@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from decouple import config
+
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -75,10 +80,15 @@ WSGI_APPLICATION = 'Proyek1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'dbProyek1',
     }
 }
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(defaul=os.environ.get('DATABSE_URL'))
+}
+
 
 
 # Password validation
