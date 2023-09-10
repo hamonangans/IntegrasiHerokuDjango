@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import django_heroku
 import dj_database_url
+import os
 
 
 
@@ -80,8 +81,12 @@ WSGI_APPLICATION = 'Proyek1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.SQLite',
-        'NAME': BASE_DIR / 'dbProyek1',
+        'ENGINE': 'django.db.backends.postgresql_psycopg',
+        'NAME': 'd7ic08ke4phqjb',
+        'USER': 'aaqursdbjeiocj',
+        'PASSWORD': 'f9c035236e211f371bbe975e95ba1f111b0a463837fa7371f51c27b01cf257f8',
+        'HOST': 'ec2-44-206-204-65.compute-1.amazonaws.com',
+        'PORT': '5432'
     }
 }
 
